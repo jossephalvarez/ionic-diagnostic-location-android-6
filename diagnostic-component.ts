@@ -1,23 +1,5 @@
   ionViewWillEnter() { 
- if (this.platform.is('android')) {
-        //VERSION 1
-        //this.tryGeolocation();
-        //version 2
-        /*    this.subscription = this._gps.diagnosticGPS()
-              .flatMap(results => this._gps.checkGPS(results))
-              .flatMap((coords: Geoposition) => this.getOffersByLocation(coords))
-              .subscribe((offers: Offer[]) => {
-                this.processOffers(offers);
-                this.loading.dismiss().then(r => {
-                  this.showText = true;
-                });
-              }, error => {
-                this.loading.dismissAll();
-                console.log("ERROR----------->" + JSON.stringify(error));
-                this.presentToast('Ups, ha ocurrido un error.Inténtalo en breve.');
-              })*/
-
-        //version 3
+ if (this.platform.is('android')) {              
         let permission = this.diagnostic.permission;
         let permissionStatus = this.diagnostic.permissionStatus;
         this.diagnostic.requestRuntimePermission(permission.ACCESS_FINE_LOCATION).then(statuses => {
